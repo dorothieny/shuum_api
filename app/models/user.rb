@@ -6,7 +6,7 @@
 
            has_many :likes, dependent: :destroy
            has_many :liked_soundcards, :through => :likes, :source => :soundcard
-           
+
            has_many :strikes, dependent: :destroy
 
            mount_uploader :avatar, AvatarUploader

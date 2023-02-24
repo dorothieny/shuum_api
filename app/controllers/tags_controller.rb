@@ -7,8 +7,9 @@ class TagsController < ApplicationController
     filtering_params(params).each do |key, value|
       @tags = @tags.public_send("filter_by_#{key}", value) if value.present?
     end
+    @tagsfin = Kaminari.paginate_array(@tags).page(params[:page]).per(15)
   
-    render json: @tags
+    render json: @tagsfin
   end
 
   # GET /tags/1

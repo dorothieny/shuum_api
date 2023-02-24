@@ -10887,3 +10887,2179 @@ Processing by SoundcardsController#newshort as HTML
 Completed 200 OK in 30ms (Views: 0.3ms | ActiveRecord: 2.6ms | Allocations: 3171)
 
 
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/soundcards/" for ::1 at 2023-02-24 22:36:06 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SoundcardsController#index as HTML
+  [1m[36mSoundcard Load (0.5ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:7:in `index'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.0ms | Allocations: 66724)
+
+
+  
+NoMethodError (undefined method `page' for [#<Soundcard id: 1, name: "Дождь на Китай-городе", description: "Я бежала утром в aic но шел очень сильный дождь и ...", audiofile: "kitai.m4a", image: "kitai.jpeg", location: "Дождливая улица", created_at: "2023-02-01 15:32:31.072334000 +0000", updated_at: "2023-02-13 11:24:54.230747000 +0000", user_id: 1>, #<Soundcard id: 2, name: "Шуммно", description: "Какое-то описание", audiofile: nil, image: nil, location: " ", created_at: "2023-02-12 20:47:48.063081000 +0000", updated_at: "2023-02-12 20:47:48.063081000 +0000", user_id: 2>, #<Soundcard id: 3, name: "Мутабор", description: "Постояла в курилочке мутика", audiofile: nil, image: nil, location: "Дождливая улица", created_at: "2023-02-12 23:07:13.309966000 +0000", updated_at: "2023-02-13 11:33:53.165518000 +0000", user_id: 1>, #<Soundcard id: 4, name: "Пение птиц", description: "Просто птички пели", audiofile: nil, image: nil, location: "Лес на Теплом стане", created_at: "2023-02-13 12:22:58.600048000 +0000", updated_at: "2023-02-13 12:22:58.600048000 +0000", user_id: 1>]:Array):
+  
+app/controllers/soundcards_controller.rb:12:in `index'
+Started GET "/api/v1/soundcards/" for ::1 at 2023-02-24 22:47:58 +0300
+Processing by SoundcardsController#index as HTML
+  [1m[36mSoundcard Load (0.4ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:7:in `index'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+Completed 200 OK in 71ms (Views: 45.5ms | ActiveRecord: 4.4ms | Allocations: 69567)
+
+
+Started GET "/api/v1/soundcards/?page=1" for ::1 at 2023-02-24 22:48:07 +0300
+Processing by SoundcardsController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:7:in `index'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+Completed 200 OK in 8ms (Views: 3.6ms | ActiveRecord: 0.5ms | Allocations: 7401)
+
+
+Started GET "/api/v1/soundcards/?page=2" for ::1 at 2023-02-24 22:48:13 +0300
+Processing by SoundcardsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:7:in `index'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+Completed 200 OK in 20ms (Views: 8.1ms | ActiveRecord: 1.6ms | Allocations: 7082)
+
+
+Started GET "/api/v1/soundcards/?page=3" for ::1 at 2023-02-24 22:48:20 +0300
+Processing by SoundcardsController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:7:in `index'
+  [1m[36mStrike Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 3093)
+
+
+Started GET "/api/v1/soundcards/?page=1" for ::1 at 2023-02-24 22:48:24 +0300
+Processing by SoundcardsController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:7:in `index'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+Completed 200 OK in 18ms (Views: 5.2ms | ActiveRecord: 1.9ms | Allocations: 7316)
+
+
+Started GET "/api/v1/soundcards/?page=2" for ::1 at 2023-02-24 22:48:57 +0300
+Processing by SoundcardsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mSoundcard Load (0.9ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:7:in `index'
+  [1m[36mStrike Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+Completed 200 OK in 47ms (Views: 4.5ms | ActiveRecord: 2.5ms | Allocations: 7067)
+
+
+Started GET "/api/v1/soundcards/?page=1&location=%D0%94%D0%BE%D0%B6%D0%B4%D0%BB%D0%B8%D0%B2%D0%B0%D1%8F" for ::1 at 2023-02-24 22:49:35 +0300
+Processing by SoundcardsController#index as HTML
+  Parameters: {"page"=>"1", "location"=>"Дождливая"}
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:7:in `index'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.7ms | Allocations: 4671)
+
+
+  
+NoMethodError (undefined method `filter_by_location' for [#<Soundcard id: 1, name: "Дождь на Китай-городе", description: "Я бежала утром в aic но шел очень сильный дождь и ...", audiofile: "kitai.m4a", image: "kitai.jpeg", location: "Дождливая улица", created_at: "2023-02-01 15:32:31.072334000 +0000", updated_at: "2023-02-13 11:24:54.230747000 +0000", user_id: 1>, #<Soundcard id: 2, name: "Шуммно", description: "Какое-то описание", audiofile: nil, image: nil, location: " ", created_at: "2023-02-12 20:47:48.063081000 +0000", updated_at: "2023-02-12 20:47:48.063081000 +0000", user_id: 2>, #<Soundcard id: 3, name: "Мутабор", description: "Постояла в курилочке мутика", audiofile: nil, image: nil, location: "Дождливая улица", created_at: "2023-02-12 23:07:13.309966000 +0000", updated_at: "2023-02-13 11:33:53.165518000 +0000", user_id: 1>, #<Soundcard id: 4, name: "Пение птиц", description: "Просто птички пели", audiofile: nil, image: nil, location: "Лес на Теплом стане", created_at: "2023-02-13 12:22:58.600048000 +0000", updated_at: "2023-02-13 12:22:58.600048000 +0000", user_id: 1>]:Array):
+  
+app/controllers/soundcards_controller.rb:9:in `public_send'
+app/controllers/soundcards_controller.rb:9:in `block in index'
+app/controllers/soundcards_controller.rb:8:in `index'
+Started GET "/api/v1/soundcards/?location=%D0%9D%D0%BE%D1%87%D0%BD%D0%BE%D0%B5" for ::1 at 2023-02-24 22:50:00 +0300
+Processing by SoundcardsController#index as HTML
+  Parameters: {"location"=>"Ночное"}
+  [1m[36mSoundcard Load (0.5ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:7:in `index'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:7:in `block in index'
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.0ms | Allocations: 4616)
+
+
+  
+NoMethodError (undefined method `filter_by_location' for [#<Soundcard id: 1, name: "Дождь на Китай-городе", description: "Я бежала утром в aic но шел очень сильный дождь и ...", audiofile: "kitai.m4a", image: "kitai.jpeg", location: "Дождливая улица", created_at: "2023-02-01 15:32:31.072334000 +0000", updated_at: "2023-02-13 11:24:54.230747000 +0000", user_id: 1>, #<Soundcard id: 2, name: "Шуммно", description: "Какое-то описание", audiofile: nil, image: nil, location: " ", created_at: "2023-02-12 20:47:48.063081000 +0000", updated_at: "2023-02-12 20:47:48.063081000 +0000", user_id: 2>, #<Soundcard id: 3, name: "Мутабор", description: "Постояла в курилочке мутика", audiofile: nil, image: nil, location: "Дождливая улица", created_at: "2023-02-12 23:07:13.309966000 +0000", updated_at: "2023-02-13 11:33:53.165518000 +0000", user_id: 1>, #<Soundcard id: 4, name: "Пение птиц", description: "Просто птички пели", audiofile: nil, image: nil, location: "Лес на Теплом стане", created_at: "2023-02-13 12:22:58.600048000 +0000", updated_at: "2023-02-13 12:22:58.600048000 +0000", user_id: 1>]:Array):
+  
+app/controllers/soundcards_controller.rb:9:in `public_send'
+app/controllers/soundcards_controller.rb:9:in `block in index'
+app/controllers/soundcards_controller.rb:8:in `index'
+Started GET "/api/v1/soundcards/?location=%D0%9D%D0%BE%D1%87%D0%BD%D0%BE%D0%B5" for ::1 at 2023-02-24 22:50:32 +0300
+Processing by SoundcardsController#index as HTML
+  Parameters: {"location"=>"Ночное"}
+  [1m[36mSoundcard Load (0.4ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE (location like '%Ночное%')[0m
+  ↳ app/controllers/soundcards_controller.rb:11:in `index'
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 16528)
+
+
+Started GET "/api/v1/soundcards/?page=2&location=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-24 22:50:49 +0300
+Processing by SoundcardsController#index as HTML
+  Parameters: {"page"=>"2", "location"=>"Дож"}
+  [1m[36mSoundcard Load (1.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE (location like '%Дож%')[0m
+  ↳ app/controllers/soundcards_controller.rb:11:in `index'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 3424)
+
+
+Started GET "/api/v1/soundcards/?page=1&location=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-24 22:50:54 +0300
+Processing by SoundcardsController#index as HTML
+  Parameters: {"page"=>"1", "location"=>"Дож"}
+  [1m[36mSoundcard Load (0.9ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE (location like '%Дож%')[0m
+  ↳ app/controllers/soundcards_controller.rb:11:in `index'
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:17:in `index'
+Completed 200 OK in 78ms (Views: 12.1ms | ActiveRecord: 2.9ms | Allocations: 18348)
+
+
+Started GET "/api/v1/soundcards/?page=1&location=%D0%BD%D0%BE" for ::1 at 2023-02-24 22:51:02 +0300
+Processing by SoundcardsController#index as HTML
+  Parameters: {"page"=>"1", "location"=>"но"}
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE (location like '%но%')[0m
+  ↳ app/controllers/soundcards_controller.rb:11:in `index'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 767)
+
+
+Started GET "/api/v1/soundcards/?page=1&location=%D0%BD%D0%BE" for ::1 at 2023-02-24 22:54:15 +0300
+Processing by SoundcardsController#index as HTML
+  Parameters: {"page"=>"1", "location"=>"но"}
+  [1m[36mSoundcard Load (0.4ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE (location like '%но%')[0m
+  ↳ app/controllers/soundcards_controller.rb:11:in `index'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 16462)
+
+
+Started GET "/api/v1/soundcards/?page=1&location=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-24 22:54:21 +0300
+Processing by SoundcardsController#index as HTML
+  Parameters: {"page"=>"1", "location"=>"Дож"}
+  [1m[36mSoundcard Load (0.4ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE (location like '%Дож%')[0m
+  ↳ app/controllers/soundcards_controller.rb:11:in `index'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:11:in `block in index'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:11:in `block in index'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:18:in `index'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:18:in `index'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:18:in `index'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:18:in `index'
+Completed 200 OK in 49ms (Views: 5.7ms | ActiveRecord: 5.0ms | Allocations: 25654)
+
+
+Started GET "/api/v1/soundcards/?page=1" for ::1 at 2023-02-24 22:54:25 +0300
+Processing by SoundcardsController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mSoundcard Load (0.4ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:11:in `index'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:11:in `block in index'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:11:in `block in index'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:11:in `block in index'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:11:in `block in index'
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:18:in `index'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:18:in `index'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:18:in `index'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:18:in `index'
+Completed 200 OK in 44ms (Views: 13.1ms | ActiveRecord: 1.9ms | Allocations: 7435)
+
+
+Started GET "/api/v1/soundcards/?page=2" for ::1 at 2023-02-24 22:54:46 +0300
+Processing by SoundcardsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mSoundcard Load (0.4ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:11:in `index'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:11:in `block in index'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:11:in `block in index'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:11:in `block in index'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:11:in `block in index'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:18:in `index'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:18:in `index'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:18:in `index'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:18:in `index'
+Completed 200 OK in 34ms (Views: 10.2ms | ActiveRecord: 1.4ms | Allocations: 7067)
+
+
+Started GET "/api/v1/users/" for ::1 at 2023-02-24 23:20:54 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 21ms (Views: 1.2ms | ActiveRecord: 3.7ms | Allocations: 18497)
+
+
+Started GET "/api/v1/users/?page=2" for ::1 at 2023-02-24 23:21:00 +0300
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 821)
+
+
+Started GET "/api/v1/users/?page=1" for ::1 at 2023-02-24 23:21:04 +0300
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 84ms (Views: 72.5ms | ActiveRecord: 0.4ms | Allocations: 821)
+
+
+Started GET "/api/v1/users/?page=1" for ::1 at 2023-02-24 23:21:14 +0300
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 2.2ms | Allocations: 4846)
+
+
+Started GET "/api/v1/users/?page=1&starts_with=do" for ::1 at 2023-02-24 23:21:43 +0300
+Processing by UsersController#index as HTML
+  Parameters: {"page"=>"1", "starts_with"=>"do"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (name like '%do%')[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 11ms (Views: 1.4ms | ActiveRecord: 0.6ms | Allocations: 1192)
+
+
+Started GET "/api/v1/users/2" for ::1 at 2023-02-24 23:36:50 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 18ms (Views: 0.5ms | ActiveRecord: 7.0ms | Allocations: 4434)
+
+
+Started GET "/api/v1/users/1" for ::1 at 2023-02-24 23:36:55 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 708)
+
+
+Started GET "/api/v1/users/1/%D1%81reated" for ::1 at 2023-02-24 23:37:03 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users/1/%D1%81reated"):
+  
+Started GET "/api/v1/users/1/created" for ::1 at 2023-02-24 23:37:14 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:64:in `created'
+  [1m[36mSoundcard Load (2.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `map'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `created'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `created'
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:70:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:70:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:70:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:70:in `created'
+Completed 200 OK in 117ms (Views: 10.3ms | ActiveRecord: 4.8ms | Allocations: 38829)
+
+
+Started GET "/api/v1/users/1/created" for ::1 at 2023-02-24 23:40:35 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:65:in `created'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `map'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+Completed 200 OK in 37ms (Views: 9.8ms | ActiveRecord: 3.0ms | Allocations: 42463)
+
+
+Started GET "/api/v1/users/1/liked" for ::1 at 2023-02-24 23:40:39 +0300
+Processing by UsersController#liked as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:52:in `liked'
+  [1m[36mSoundcard Load (0.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "likes" ON "soundcards"."id" = "likes"."soundcard_id" WHERE "likes"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:55:in `map'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1849)
+
+
+Started GET "/api/v1/users/2/liked" for ::1 at 2023-02-24 23:40:43 +0300
+Processing by UsersController#liked as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:52:in `liked'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "likes" ON "soundcards"."id" = "likes"."soundcard_id" WHERE "likes"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:55:in `map'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:59:in `liked'
+Completed 200 OK in 12ms (Views: 3.9ms | ActiveRecord: 0.7ms | Allocations: 2758)
+
+
+Started GET "/api/v1/users/2/following" for ::1 at 2023-02-24 23:42:34 +0300
+Processing by UsersController#following as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `following'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followee_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 2]]
+  ↳ app/controllers/users_controller.rb:83:in `following'
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 1.4ms | Allocations: 10060)
+
+
+Started GET "/api/v1/users/2/followed" for ::1 at 2023-02-24 23:42:41 +0300
+Processing by UsersController#followed as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:89:in `followed'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followee_id" = ?[0m  [["followee_id", 2]]
+  ↳ app/controllers/users_controller.rb:92:in `followed'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 1525)
+
+
+Started GET "/api/v1/users/1/followed" for ::1 at 2023-02-24 23:42:44 +0300
+Processing by UsersController#followed as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:89:in `followed'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."follower_id" WHERE "follows"."followee_id" = ?[0m  [["followee_id", 1]]
+  ↳ app/controllers/users_controller.rb:92:in `followed'
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 0.7ms | Allocations: 1565)
+
+
+Started GET "/api/v1/users/1/created" for ::1 at 2023-02-24 23:45:04 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:65:in `created'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `created'
+  [1m[36mStrike Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:67:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:67:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `created'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:72:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:72:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:72:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:72:in `created'
+Completed 200 OK in 62ms (Views: 7.8ms | ActiveRecord: 3.6ms | Allocations: 47788)
+
+
+Started GET "/api/v1/users/1/created" for ::1 at 2023-02-24 23:45:05 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:65:in `created'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `created'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:67:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:67:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:67:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:72:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:72:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:72:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:72:in `created'
+Completed 200 OK in 9ms (Views: 4.3ms | ActiveRecord: 0.8ms | Allocations: 9182)
+
+
+Started GET "/api/v1/users/2/created" for ::1 at 2023-02-24 23:45:08 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:65:in `created'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:67:in `created'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:67:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:72:in `created'
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:72:in `created'
+Completed 200 OK in 15ms (Views: 5.6ms | ActiveRecord: 1.2ms | Allocations: 3663)
+
+
+Started GET "/api/v1/users/2/liked" for ::1 at 2023-02-24 23:46:38 +0300
+Processing by UsersController#liked as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:52:in `liked'
+  [1m[36mSoundcard Load (0.9ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "likes" ON "soundcards"."id" = "likes"."soundcard_id" WHERE "likes"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:55:in `liked'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:55:in `block in liked'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `liked'
+Completed 200 OK in 29ms (Views: 2.0ms | ActiveRecord: 2.6ms | Allocations: 40887)
+
+
+Started GET "/api/v1/users/1/liked" for ::1 at 2023-02-24 23:46:42 +0300
+Processing by UsersController#liked as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:52:in `liked'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "likes" ON "soundcards"."id" = "likes"."soundcard_id" WHERE "likes"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:55:in `liked'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1339)
+
+
+Started GET "/api/v1/users/2/liked" for ::1 at 2023-02-24 23:46:48 +0300
+Processing by UsersController#liked as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:52:in `liked'
+  [1m[36mSoundcard Load (0.7ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "likes" ON "soundcards"."id" = "likes"."soundcard_id" WHERE "likes"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:55:in `liked'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:55:in `block in liked'
+  [1m[36mTag Load (0.8ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `liked'
+Completed 200 OK in 23ms (Views: 11.5ms | ActiveRecord: 1.9ms | Allocations: 3392)
+
+
+Started GET "/api/v1/soundcards/?multiple=%D0%B4%D0%BE%D0%B6" for ::1 at 2023-02-25 00:57:03 +0300
+Processing by SoundcardsController#index as HTML
+  Parameters: {"multiple"=>"дож"}
+  [1m[36mSoundcard Load (0.6ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE (name like '%дож%' OR location like '%дож%' OR tags.tagname like '%дож%')[0m
+  ↳ app/controllers/soundcards_controller.rb:11:in `index'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:11:in `block in index'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:18:in `index'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:18:in `index'
+Completed 200 OK in 28ms (Views: 2.6ms | ActiveRecord: 2.9ms | Allocations: 36542)
+
+
+Started GET "/api/v1/users/created/?multiple=%D0%B4%D0%BE%D0%B6" for ::1 at 2023-02-25 00:57:22 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"multiple"=>"дож", "id"=>"created"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 1497)
+
+
+Started GET "/api/v1/users/created/?multiple=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-25 00:57:26 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"multiple"=>"Дож", "id"=>"created"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 506)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-25 00:57:41 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Дож", "id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE (name like '%Дож%' OR location like '%Дож%' OR tags.tagname like '%Дож%')[0m
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 32ms (Views: 8.8ms | ActiveRecord: 2.4ms | Allocations: 18854)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%BD%D0%BE" for ::1 at 2023-02-25 00:57:48 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"но", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.4ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE (name like '%но%' OR location like '%но%' OR tags.tagname like '%но%')[0m
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 18ms (Views: 7.2ms | ActiveRecord: 1.0ms | Allocations: 6469)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%A8%D1%83%D0%BC" for ::1 at 2023-02-25 00:58:39 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Шум", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE (name like '%Шум%' OR location like '%Шум%' OR tags.tagname like '%Шум%')[0m
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 36ms (Views: 7.5ms | ActiveRecord: 1.1ms | Allocations: 6469)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%9A%D0%B8" for ::1 at 2023-02-25 00:58:47 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Ки", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE (name like '%Ки%' OR location like '%Ки%' OR tags.tagname like '%Ки%')[0m
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 42ms (Views: 13.9ms | ActiveRecord: 1.0ms | Allocations: 6937)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D1%83%D0%BB%D0%B8%D1%86%D0%B0" for ::1 at 2023-02-25 00:58:56 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"улица", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE (name like '%улица%' OR location like '%улица%' OR tags.tagname like '%улица%')[0m
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 60ms (Views: 20.7ms | ActiveRecord: 1.4ms | Allocations: 14805)
+
+
+Started GET "/api/v1/users/1/created/" for ::1 at 2023-02-25 00:59:46 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 34ms (Views: 6.0ms | ActiveRecord: 2.7ms | Allocations: 47832)
+
+
+Started GET "/api/v1/users/2/created/" for ::1 at 2023-02-25 00:59:58 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 31ms (Views: 4.0ms | ActiveRecord: 3.4ms | Allocations: 3710)
+
+
+Started GET "/api/v1/users/1/created/" for ::1 at 2023-02-25 01:00:03 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mStrike Count (4.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 43ms (Views: 13.4ms | ActiveRecord: 5.2ms | Allocations: 9136)
+
+
+Started GET "/api/v1/users/1/created/" for ::1 at 2023-02-25 01:01:30 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.0ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 37ms (Views: 7.2ms | ActiveRecord: 3.8ms | Allocations: 47748)
+
+
+Started GET "/api/v1/users/2/created/" for ::1 at 2023-02-25 01:02:53 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.0ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 43ms (Views: 3.2ms | ActiveRecord: 6.9ms | Allocations: 40936)
+
+
+Started GET "/api/v1/users/2/created/?multiple=%D0%94%D0%BE" for ::1 at 2023-02-25 01:03:19 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"До", "id"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE (name like '%До%' OR location like '%До%' OR tags.tagname like '%До%')[0m
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 41ms (Views: 17.7ms | ActiveRecord: 2.8ms | Allocations: 16381)
+
+
+Started GET "/api/v1/users/2/created/?multiple=%D0%94%D0%BE" for ::1 at 2023-02-25 01:05:37 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"До", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE (name like '%До%' OR location like '%До%' OR tags.tagname like '%До%')[0m
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 37ms (Views: 7.8ms | ActiveRecord: 3.8ms | Allocations: 53592)
+
+
+Started GET "/api/v1/users/2/created/?multiple=%D0%94%D0%BE" for ::1 at 2023-02-25 01:05:40 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"До", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE (name like '%До%' OR location like '%До%' OR tags.tagname like '%До%')[0m
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 43ms (Views: 16.4ms | ActiveRecord: 1.4ms | Allocations: 14877)
+
+
+Started GET "/api/v1/users/2/created/" for ::1 at 2023-02-25 01:05:44 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 18ms (Views: 7.0ms | ActiveRecord: 1.0ms | Allocations: 6417)
+
+
+Started GET "/api/v1/users/2/created/" for ::1 at 2023-02-25 01:07:40 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.9ms | Allocations: 20728)
+
+
+  
+NoMethodError (private method `select' called for nil:NilClass):
+  
+app/controllers/users_controller.rb:74:in `created'
+Started GET "/api/v1/users/2/created/" for ::1 at 2023-02-25 01:08:09 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 43ms (Views: 3.5ms | ActiveRecord: 2.0ms | Allocations: 43820)
+
+
+Started GET "/api/v1/users/2/created/" for ::1 at 2023-02-25 01:08:53 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 27ms (Views: 3.5ms | ActiveRecord: 2.0ms | Allocations: 43738)
+
+
+Started GET "/api/v1/users/2/created/" for ::1 at 2023-02-25 01:09:07 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.0ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.7ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 27ms (Views: 3.5ms | ActiveRecord: 3.2ms | Allocations: 41002)
+
+
+Started GET "/api/v1/users/2/created/" for ::1 at 2023-02-25 01:09:44 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 27ms (Views: 3.4ms | ActiveRecord: 2.1ms | Allocations: 43738)
+
+
+Started GET "/api/v1/users/2/created/" for ::1 at 2023-02-25 01:10:17 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.0ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 36ms (Views: 3.4ms | ActiveRecord: 2.2ms | Allocations: 40905)
+
+
+Started GET "/api/v1/users/2/created/?multiple=%D0%94%D0%BE" for ::1 at 2023-02-25 01:10:24 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"До", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.0ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 0.5ms | Allocations: 3716)
+
+
+Started GET "/api/v1/users/2/created/?multiple=%D0%94%D0%BE" for ::1 at 2023-02-25 01:10:35 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"До", "id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 29ms (Views: 4.7ms | ActiveRecord: 1.5ms | Allocations: 3663)
+
+
+Started GET "/api/v1/users/2/created/?multiple=%D0%94%D0%BE" for ::1 at 2023-02-25 01:10:36 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"До", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 13ms (Views: 5.0ms | ActiveRecord: 1.0ms | Allocations: 3663)
+
+
+Started GET "/api/v1/users/2/created/?multiple=%D0%94%D0%BE" for ::1 at 2023-02-25 01:10:50 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"До", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE (name like '%До%' OR location like '%До%' OR tags.tagname like '%До%')[0m
+  ↳ app/controllers/users_controller.rb:74:in `created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:74:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:81:in `created'
+Completed 200 OK in 37ms (Views: 7.1ms | ActiveRecord: 2.5ms | Allocations: 53605)
+
+
+Started GET "/api/v1/users/2/created/" for ::1 at 2023-02-25 01:14:12 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:69:in `created'
+  [1m[36mStrike Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:69:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+Completed 200 OK in 31ms (Views: 3.3ms | ActiveRecord: 3.3ms | Allocations: 40983)
+
+
+Started GET "/api/v1/users/1/created/" for ::1 at 2023-02-25 01:14:16 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:69:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:69:in `block in created'
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+Completed 200 OK in 26ms (Views: 5.4ms | ActiveRecord: 1.3ms | Allocations: 10588)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%9A%D0%B8" for ::1 at 2023-02-25 01:17:24 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Ки", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:69:in `block in created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:69:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+Completed 200 OK in 29ms (Views: 5.5ms | ActiveRecord: 2.3ms | Allocations: 47753)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%9A%D0%B8" for ::1 at 2023-02-25 01:17:28 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Ки", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:69:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:69:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+Completed 200 OK in 15ms (Views: 6.9ms | ActiveRecord: 0.8ms | Allocations: 9184)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%9A%D0%B8" for ::1 at 2023-02-25 01:18:10 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Ки", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.0ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:69:in `block in created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:69:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+Completed 200 OK in 30ms (Views: 6.9ms | ActiveRecord: 2.2ms | Allocations: 47861)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%9A%D0%B8" for ::1 at 2023-02-25 01:18:17 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Ки", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `created'
+  [1m[36mStrike Count (6.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:69:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:69:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:69:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:75:in `created'
+Completed 200 OK in 63ms (Views: 20.6ms | ActiveRecord: 7.7ms | Allocations: 9185)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%9A%D0%B8" for ::1 at 2023-02-25 01:23:59 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Ки", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE (name like '%Ки%' OR location like '%Ки%' OR tags.tagname like '%Ки%')[0m
+  ↳ app/controllers/users_controller.rb:70:in `created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:76:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:76:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:76:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:76:in `created'
+Completed 200 OK in 37ms (Views: 4.4ms | ActiveRecord: 2.4ms | Allocations: 45736)
+
+
+Started GET "/api/v1/users/1/created/" for ::1 at 2023-02-25 01:24:08 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.4ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `created'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:70:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:70:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:76:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:76:in `created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:76:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:76:in `created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:76:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:76:in `created'
+Completed 200 OK in 27ms (Views: 12.1ms | ActiveRecord: 1.5ms | Allocations: 9215)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%9D%D0%BE" for ::1 at 2023-02-25 01:24:23 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Но", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE (name like '%Но%' OR location like '%Но%' OR tags.tagname like '%Но%')[0m
+  ↳ app/controllers/users_controller.rb:70:in `created'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 1380)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-25 01:24:29 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Дож", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE (name like '%Дож%' OR location like '%Дож%' OR tags.tagname like '%Дож%')[0m
+  ↳ app/controllers/users_controller.rb:70:in `created'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `block in created'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:70:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:70:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:70:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:76:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:76:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:76:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:76:in `created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:76:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:76:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:76:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:76:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:76:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:76:in `created'
+Completed 200 OK in 35ms (Views: 13.0ms | ActiveRecord: 1.2ms | Allocations: 14791)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-25 01:25:54 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Дож", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE (name like '%Дож%' OR location like '%Дож%' OR tags.tagname like '%Дож%')[0m
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+Completed 200 OK in 32ms (Views: 1.2ms | ActiveRecord: 1.9ms | Allocations: 37461)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-25 01:26:06 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Дож", "id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE (name like '%Дож%' OR location like '%Дож%' OR tags.tagname like '%Дож%')[0m
+  ↳ app/controllers/users_controller.rb:73:in `map'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+Completed 200 OK in 25ms (Views: 7.0ms | ActiveRecord: 1.8ms | Allocations: 47190)
+
+
+Started GET "/api/v1/users/1/created/" for ::1 at 2023-02-25 01:26:53 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:73:in `map'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+Completed 200 OK in 39ms (Views: 7.3ms | ActiveRecord: 3.6ms | Allocations: 7357)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-25 01:31:07 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Дож", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE (name like '%Дож%' OR location like '%Дож%' OR tags.tagname like '%Дож%')[0m
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+Completed 200 OK in 31ms (Views: 7.7ms | ActiveRecord: 2.9ms | Allocations: 53569)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-25 01:31:09 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Дож", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE (name like '%Дож%' OR location like '%Дож%' OR tags.tagname like '%Дож%')[0m
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+Completed 200 OK in 39ms (Views: 12.3ms | ActiveRecord: 1.2ms | Allocations: 14861)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-25 01:31:11 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Дож", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE (name like '%Дож%' OR location like '%Дож%' OR tags.tagname like '%Дож%')[0m
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+Completed 200 OK in 15ms (Views: 8.6ms | ActiveRecord: 0.7ms | Allocations: 14791)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-25 01:32:16 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Дож", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE (name like '%Дож%' OR location like '%Дож%' OR tags.tagname like '%Дож%')[0m
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+Completed 200 OK in 36ms (Views: 9.1ms | ActiveRecord: 2.9ms | Allocations: 53674)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-25 01:32:17 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Дож", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE (name like '%Дож%' OR location like '%Дож%' OR tags.tagname like '%Дож%')[0m
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+Completed 200 OK in 29ms (Views: 10.6ms | ActiveRecord: 1.2ms | Allocations: 14859)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-25 01:34:11 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Дож", "id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.0ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ? AND (location like 'Дож')[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 20933)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%9A%D0%B8" for ::1 at 2023-02-25 01:34:19 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Ки", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.6ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ? AND (location like 'Ки')[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 1158)
+
+
+Started GET "/api/v1/users/1/created/" for ::1 at 2023-02-25 01:34:21 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.7ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+Completed 200 OK in 69ms (Views: 11.4ms | ActiveRecord: 5.8ms | Allocations: 28064)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%9B%D0%B5%D1%81" for ::1 at 2023-02-25 01:34:36 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Лес", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ? AND (location like 'Лес')[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 1164)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%9B" for ::1 at 2023-02-25 01:34:41 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Л", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ? AND (location like 'Л')[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+Completed 200 OK in 28ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1123)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-25 01:34:45 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Дож", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ? AND (location like 'Дож')[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1123)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-25 01:35:37 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Дож", "id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.0ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ? AND (location like '%Дож%')[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+Completed 200 OK in 27ms (Views: 5.0ms | ActiveRecord: 2.0ms | Allocations: 45351)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%9B%D0%B5%D1%81" for ::1 at 2023-02-25 01:35:41 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Лес", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ? AND (location like '%Лес%')[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mStrike Count (4.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+Completed 200 OK in 17ms (Views: 3.6ms | ActiveRecord: 5.5ms | Allocations: 3692)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%9B%D0%B5%D1%81" for ::1 at 2023-02-25 01:36:30 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Лес", "id"=>"1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE "soundcards"."user_id" = ? AND (location like '%Лес%')[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+Completed 200 OK in 28ms (Views: 3.0ms | ActiveRecord: 2.0ms | Allocations: 41212)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-25 01:36:36 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Дож", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.5ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE "soundcards"."user_id" = ? AND (location like '%Дож%')[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+Completed 200 OK in 33ms (Views: 12.9ms | ActiveRecord: 1.9ms | Allocations: 16266)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%9B%D0%B5%D1%81" for ::1 at 2023-02-25 01:36:45 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Лес", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.4ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE "soundcards"."user_id" = ? AND (location like '%Лес%')[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mStrike Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+Completed 200 OK in 26ms (Views: 5.9ms | ActiveRecord: 1.2ms | Allocations: 3860)
+
+
+Started GET "/api/v1/users/1/created/" for ::1 at 2023-02-25 01:36:56 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mStrike Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mStrike Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+Completed 200 OK in 54ms (Views: 28.2ms | ActiveRecord: 3.0ms | Allocations: 9167)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-25 01:37:25 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Дож", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "taggables" ON "taggables"."soundcard_id" = "soundcards"."id" INNER JOIN "tags" ON "tags"."id" = "taggables"."tag_id" WHERE "soundcards"."user_id" = ? AND (location like '%Дож%')[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mCACHE Strike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Like Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+Completed 200 OK in 38ms (Views: 12.2ms | ActiveRecord: 1.4ms | Allocations: 14778)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-25 01:37:34 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Дож", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ? AND (location like '%Дож%')[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+Completed 200 OK in 27ms (Views: 4.8ms | ActiveRecord: 2.1ms | Allocations: 45354)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-25 01:39:09 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Дож", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ? AND (location like '%Дож%' OR name like '%Дож%')[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+Completed 200 OK in 30ms (Views: 5.9ms | ActiveRecord: 2.3ms | Allocations: 45299)
+
+
+Started GET "/api/v1/users/1/created/?multiple=%D0%9C%D1%83%D1%82" for ::1 at 2023-02-25 01:39:18 +0300
+Processing by UsersController#created as HTML
+  Parameters: {"multiple"=>"Мут", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:66:in `created'
+  [1m[36mSoundcard Load (0.5ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" WHERE "soundcards"."user_id" = ? AND (location like '%Мут%' OR name like '%Мут%')[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:71:in `created'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:71:in `block in created'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/users_controller.rb:78:in `created'
+Completed 200 OK in 20ms (Views: 5.0ms | ActiveRecord: 1.4ms | Allocations: 3898)
+
+
+Started GET "/api/v1/users/1/liked" for ::1 at 2023-02-25 01:40:27 +0300
+Processing by UsersController#liked as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:52:in `liked'
+  [1m[36mSoundcard Load (0.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "likes" ON "soundcards"."id" = "likes"."soundcard_id" WHERE "likes"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `liked'
+Completed 200 OK in 19ms (Views: 0.1ms | ActiveRecord: 2.2ms | Allocations: 24991)
+
+
+Started GET "/api/v1/users/2/liked" for ::1 at 2023-02-25 01:40:30 +0300
+Processing by UsersController#liked as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:52:in `liked'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "likes" ON "soundcards"."id" = "likes"."soundcard_id" WHERE "likes"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:57:in `liked'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `block in liked'
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:62:in `liked'
+Completed 200 OK in 33ms (Views: 3.6ms | ActiveRecord: 1.4ms | Allocations: 17347)
+
+
+Started GET "/api/v1/users/2/liked/?multiple=%D0%94%D0%BE%D0%B6" for ::1 at 2023-02-25 01:40:51 +0300
+Processing by UsersController#liked as HTML
+  Parameters: {"multiple"=>"Дож", "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:52:in `liked'
+  [1m[36mSoundcard Load (0.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "likes" ON "soundcards"."id" = "likes"."soundcard_id" WHERE "likes"."user_id" = ? AND (location like '%Дож%' OR name like '%Дож%')[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:57:in `liked'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `block in liked'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/users_controller.rb:62:in `liked'
+Completed 200 OK in 16ms (Views: 2.0ms | ActiveRecord: 0.9ms | Allocations: 3568)
+
+
+Started GET "/api/v1/users/2/liked/?multiple=%D0%9C%D1%83" for ::1 at 2023-02-25 01:40:56 +0300
+Processing by UsersController#liked as HTML
+  Parameters: {"multiple"=>"Му", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:52:in `liked'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" INNER JOIN "likes" ON "soundcards"."id" = "likes"."soundcard_id" WHERE "likes"."user_id" = ? AND (location like '%Му%' OR name like '%Му%')[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:57:in `liked'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1388)
+
+
+Started GET "/api/v1/tags/" for ::1 at 2023-02-25 01:42:19 +0300
+Processing by TagsController#index as HTML
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/tags_controller.rb:10:in `index'
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 6295)
+
+
+Started GET "/api/v1/tags/" for ::1 at 2023-02-25 01:42:29 +0300
+Processing by TagsController#index as HTML
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/tags_controller.rb:10:in `index'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 5913)
+
+
+Started GET "/api/v1/tags/?page=2" for ::1 at 2023-02-25 01:42:37 +0300
+Processing by TagsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/tags_controller.rb:10:in `index'
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 972)
+
+
+Started GET "/api/v1/users/" for ::1 at 2023-02-25 01:50:44 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:10:in `index'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 2.5ms | Allocations: 4769)
+
+
+Started GET "/api/v1/users/1/following" for ::1 at 2023-02-25 01:50:56 +0300
+Processing by UsersController#following as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `following'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followee_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/controllers/users_controller.rb:83:in `following'
+Completed 200 OK in 48ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 5473)
+
+
+Started GET "/api/v1/users/2/following" for ::1 at 2023-02-25 01:51:00 +0300
+Processing by UsersController#following as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `following'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followee_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 2]]
+  ↳ app/controllers/users_controller.rb:83:in `following'
+Completed 200 OK in 12ms (Views: 1.2ms | ActiveRecord: 0.5ms | Allocations: 1672)
+
+
+Started GET "/api/v1/users/2/following/?name=na" for ::1 at 2023-02-25 01:51:12 +0300
+Processing by UsersController#following as HTML
+  Parameters: {"name"=>"na", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `following'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followee_id" WHERE "follows"."follower_id" = ? AND (name like '%na%')[0m  [["follower_id", 2]]
+  ↳ app/controllers/users_controller.rb:83:in `following'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1483)
+
+
+Started GET "/api/v1/users/2/following/?name=do" for ::1 at 2023-02-25 01:51:16 +0300
+Processing by UsersController#following as HTML
+  Parameters: {"name"=>"do", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:78:in `following'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followee_id" WHERE "follows"."follower_id" = ? AND (name like '%do%')[0m  [["follower_id", 2]]
+  ↳ app/controllers/users_controller.rb:83:in `following'
+Completed 200 OK in 11ms (Views: 1.9ms | ActiveRecord: 0.7ms | Allocations: 1672)
+
+

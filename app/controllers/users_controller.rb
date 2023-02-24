@@ -6,7 +6,11 @@ class UsersController < ApplicationController
     filtering_params(params).each do |key, value|
       @users = @users.public_send("filter_by_#{key}", value) if value.present?
     end
-    render json: @users
+
+    @usersfin = Kaminari.paginate_array(@users).page(params[:page]).per(15)
+  
+
+    render json: @usersfin
   end
 
   def show
@@ -34,24 +38,19 @@ class UsersController < ApplicationController
     # redirect_back(fallback_location: user_path(@user))
   end
 
-  def following
-    @user = User.find(params[:id])
-    if @user
-      @follow = @user.followed_users
-      @following = @user.followees.all
-      render json: @following
-    end
-  end
-
-
+ 
   def liked
     @user = User.find(params[:id])
     if @user
       @liked = @user.liked_soundcards
-     @liked = @liked.map do |soundcard|
+      @liked = @liked.where("location like ? OR name like ?", "%#{params[:multiple]}%", "%#{params[:multiple]}%") if params[:multiple].present?
+       
+      @liked = @liked.select {|soundcard| soundcard.strikes.count <= 2}
+      @liked = @liked.map do |soundcard|
         soundcard.as_json.merge({:tags => soundcard.tags})
     end
-      render json: @liked
+    @likedfin = Kaminari.paginate_array(@liked).page(params[:page]).per(15)
+      render json: @likedfin
     end
 
   end
@@ -59,11 +58,17 @@ class UsersController < ApplicationController
   def created
     @user = User.find(params[:id])
     if @user
-      @soundcards = Soundcard.where(user_id: @user.id).map do |soundcard|
+      @soundcards = Soundcard.where(user_id: @user.id)
+      @soundcards = @soundcards.where("location like ? OR name like ?", "%#{params[:multiple]}%", "%#{params[:multiple]}%") if params[:multiple].present?
+       
+      @soundcards = @soundcards.select {|soundcard| soundcard.strikes.count <= 2}
+
+      @soundcards = @soundcards.map do |soundcard|
         soundcard.as_json.merge({:likes => soundcard.likes, :tags => soundcard.tags})
     end
-      
-      render json: @soundcards
+
+      @soundcardsfin = Kaminari.paginate_array(@soundcards).page(params[:page]).per(15)
+      render json: @soundcardsfin
     end
 
   end
@@ -74,7 +79,9 @@ class UsersController < ApplicationController
     if @user
       @follow = @user.followed_users
       @following = @user.followees.all
-      render json: @following
+      @following =  @following.where("name like ?", "%#{params[:name]}%") if params[:name].present?
+      @followingfin = Kaminari.paginate_array(@following).page(params[:page]).per(15)
+      render json: @followingfin
     end
   end
 
@@ -82,7 +89,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user
       @following = @user.followers.all
-      render json: @following
+      @following =  @following.where("name like ?", "%#{params[:name]}%") if params[:name].present?
+      @followingfin = Kaminari.paginate_array(@following).page(params[:page]).per(15)
+      render json: @followingfin
     end
   end
 

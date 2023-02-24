@@ -4,12 +4,14 @@ class SoundcardsController < ApplicationController
 
   # GET /soundcards
   def index
-  @soundcards = Soundcard.all.select {|soundcard| soundcard.strikes.count <= 2}
+  @soundcards = Soundcard.all
   filtering_params(params).each do |key, value|
     @soundcards = @soundcards.public_send("filter_by_#{key}", value) if value.present?
   end
-
-   @soundcards = @soundcards.map do |soundcard|
+  @soundcards = @soundcards.select {|soundcard| soundcard.strikes.count <= 2}
+  @soundcardstest = Kaminari.paginate_array(@soundcards).page(params[:page]).per(15)
+  
+   @soundcards = @soundcardstest.map do |soundcard|
       soundcard.as_json.merge({:likes => soundcard.likes, :tags => soundcard.tags})
   end
 
@@ -50,7 +52,8 @@ class SoundcardsController < ApplicationController
 
   def newest
     @middleres = Soundcard.all.select{|soundcard| soundcard.strikes.count <= 2 && soundcard.created_at >= Date.today - 7}
-    @current_week = @middleres.map do |soundcard|
+    @current = Kaminari.paginate_array(@middleres).page(params[:page]).per(15)
+    @current_week = @current.map do |soundcard|
       soundcard.as_json.merge({:likes => soundcard.likes, :tags => soundcard.tags})
   end
     render json: @current_week
@@ -58,7 +61,8 @@ class SoundcardsController < ApplicationController
 
   def popular
     @popular = Soundcard.all.select {|soundcard| soundcard.likes.count >= 1 && soundcard.strikes.count <= 2 }
-    @popular = @popular.map do |soundcard|
+    @current = Kaminari.paginate_array(@popular).page(params[:page]).per(15)
+    @popular = @current.map do |soundcard|
       soundcard.as_json.merge({:likes => soundcard.likes, :tags => soundcard.tags})
   end
     render json: @popular

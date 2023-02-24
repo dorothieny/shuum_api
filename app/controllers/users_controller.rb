@@ -92,12 +92,12 @@ class UsersController < ApplicationController
 
       @following = @user.followees.all.map do |followee| 
 
-        @soundcards = Soundcard.all.select {|soundcard| soundcard.user_id == followee.id && soundcard.created_at >= Date.today - 7}
+        @soundcards = Soundcard.all.select {|soundcard| soundcard.user_id == followee.id && soundcard.created_at >= Date.today - 7 && soundcard.strikes.count <= 2}
         @soundcards = @soundcards.map do |soundcard|
           soundcard.as_json.merge({:likes => soundcard.likes, :tags => soundcard.tags})
       end
       
-        followee.as_json.merge({:sounds => @soundcards, :count => @soundcards.count})
+        followee.as_json.merge({:sounds => @soundcards.first(3), :count => @soundcards.count})
 
       end
       render json: @following

@@ -1,6 +1,6 @@
 class SoundcardsController < ApplicationController
   before_action :set_soundcard, only: %i[ show update destroy ]
-  before_action :authenticate_user!, except: [:index, :show, :newest, :popular, :striked]
+  before_action :authenticate_user!, except: [:index, :show, :newest, :popular, :striked, :random, :popshort, :newshort]
 
   # GET /soundcards
   def index
@@ -63,6 +63,33 @@ class SoundcardsController < ApplicationController
   end
     render json: @popular
   end
+
+  def newshort
+    @middleres = Soundcard.all.select{|soundcard| soundcard.strikes.count <= 2 && soundcard.created_at >= Date.today - 7}
+    @current_week = @middleres.map do |soundcard|
+      soundcard.as_json.merge({:likes => soundcard.likes, :tags => soundcard.tags})
+  end
+    render json: @current_week.first(3)
+  end
+
+  def popshort
+    @popular = Soundcard.all.select {|soundcard| soundcard.likes.count >= 1 && soundcard.strikes.count <= 2 }
+    @popular = @popular.map do |soundcard|
+      soundcard.as_json.merge({:likes => soundcard.likes, :tags => soundcard.tags})
+  end
+    render json: @popular.first(3)
+  end
+
+
+
+  def random
+    @random_sound_count = Soundcard.all.select {|soundcard| soundcard.strikes.count <= 2}
+    @random_sound = Soundcard.offset(rand(@random_sound_count.length)).first
+
+    @author = User.where(id: @random_sound.user_id)
+    render json: {likes: @random_sound.likes, tags: @random_sound.tags, soundcard: @random_sound, author: @author.first.name}, status: :ok
+  end
+
 
   def striked
     @striked = Soundcard.all.select {|soundcard| soundcard.strikes.count >= 1}

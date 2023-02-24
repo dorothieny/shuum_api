@@ -23,6 +23,9 @@ Rails.application.routes.draw do
               get 'newest', :to => "soundcards#newest", :as => :newest
               get 'popular', :to => "soundcards#popular", :as => :popular
               get 'striked', :to => "soundcards#striked", :as => :striked
+              get 'random', :to => "soundcards#random", :as => :random
+              get 'newshort', :to => "soundcards#newshort", :as => :newshort
+              get 'popshort', :to => "soundcards#popshort", :as => :popshort
               resources :tags
             end
 

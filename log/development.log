@@ -10359,3 +10359,531 @@ Processing by SoundcardsController#striked as HTML
 Completed 200 OK in 44ms (Views: 4.4ms | ActiveRecord: 2.4ms | Allocations: 36844)
 
 
+Started GET "/api/v1/feed" for ::1 at 2023-02-24 21:53:56 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/feed"):
+  
+Started GET "/api/v1/users/" for ::1 at 2023-02-24 21:54:03 +0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9:in `index'
+Completed 200 OK in 41ms (Views: 39.6ms | ActiveRecord: 15.6ms | Allocations: 4825)
+
+
+Started GET "/api/v1/users/1" for ::1 at 2023-02-24 21:54:07 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13:in `show'
+Completed 200 OK in 11ms (Views: 1.1ms | ActiveRecord: 0.7ms | Allocations: 1195)
+
+
+Started GET "/api/v1/users/1/feed" for ::1 at 2023-02-24 21:54:14 +0300
+Processing by UsersController#feed as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:90:in `feed'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followee_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 1]]
+  ↳ app/controllers/users_controller.rb:93:in `map'
+Completed 200 OK in 28ms (Views: 0.4ms | ActiveRecord: 1.3ms | Allocations: 5916)
+
+
+Started GET "/api/v1/users/2/feed" for ::1 at 2023-02-24 21:54:18 +0300
+Processing by UsersController#feed as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:90:in `feed'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followee_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 2]]
+  ↳ app/controllers/users_controller.rb:93:in `map'
+  [1m[36mSoundcard Load (0.7ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/users_controller.rb:95:in `block in feed'
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 1.1ms | Allocations: 20791)
+
+
+  
+NoMethodError (undefined method `limit' for []:Array):
+  
+app/controllers/users_controller.rb:100:in `block in feed'
+app/controllers/users_controller.rb:93:in `map'
+app/controllers/users_controller.rb:93:in `feed'
+Started GET "/api/v1/users/2/feed" for ::1 at 2023-02-24 21:55:18 +0300
+Processing by UsersController#feed as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:90:in `feed'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followee_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 2]]
+  ↳ app/controllers/users_controller.rb:93:in `map'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/users_controller.rb:95:in `block in feed'
+Completed 200 OK in 21ms (Views: 0.1ms | ActiveRecord: 3.2ms | Allocations: 27894)
+
+
+Started GET "/api/v1/users/2/feed" for ::1 at 2023-02-24 21:56:18 +0300
+  
+SyntaxError (/Users/dorothieny/Desktop/shuum/shuum_api_2.0/app/controllers/users_controller.rb:100: syntax error, unexpected '.'
+...merge({:sounds => @soundcards?.limit(3), :count => @soundcar...
+...                              ^
+/Users/dorothieny/Desktop/shuum/shuum_api_2.0/app/controllers/users_controller.rb:100: syntax error, unexpected ',', expecting `end'
+...ounds => @soundcards?.limit(3), :count => @soundcards.count})
+...                              ^
+/Users/dorothieny/Desktop/shuum/shuum_api_2.0/app/controllers/users_controller.rb:100: syntax error, unexpected instance variable
+...limit(3), :count => @soundcards.count})
+...                    ^~~~~~~~~~~
+/Users/dorothieny/Desktop/shuum/shuum_api_2.0/app/controllers/users_controller.rb:100: syntax error, unexpected '}', expecting `end'
+...), :count => @soundcards.count})
+...                              ^
+):
+  
+app/controllers/users_controller.rb:100: syntax error, unexpected '.'
+app/controllers/users_controller.rb:100: syntax error, unexpected ',', expecting `end'
+app/controllers/users_controller.rb:100: syntax error, unexpected instance variable
+app/controllers/users_controller.rb:100: syntax error, unexpected '}', expecting `end'
+app/controllers/users_controller.rb:100: syntax error, unexpected '.'
+app/controllers/users_controller.rb:100: syntax error, unexpected ',', expecting `end'
+app/controllers/users_controller.rb:100: syntax error, unexpected instance variable
+app/controllers/users_controller.rb:100: syntax error, unexpected '}', expecting `end'
+Started GET "/api/v1/users/2/feed" for ::1 at 2023-02-24 21:58:47 +0300
+Processing by UsersController#feed as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:90:in `feed'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followee_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 2]]
+  ↳ app/controllers/users_controller.rb:93:in `map'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/users_controller.rb:95:in `block in feed'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 2.6ms | Allocations: 28704)
+
+
+  
+NoMethodError (undefined method `limit' for []:Array):
+  
+app/controllers/users_controller.rb:96:in `block in feed'
+app/controllers/users_controller.rb:93:in `map'
+app/controllers/users_controller.rb:93:in `feed'
+Started GET "/api/v1/users/2/feed" for ::1 at 2023-02-24 22:06:01 +0300
+Processing by UsersController#feed as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:90:in `feed'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."followee_id" WHERE "follows"."follower_id" = ?[0m  [["follower_id", 2]]
+  ↳ app/controllers/users_controller.rb:93:in `map'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/users_controller.rb:95:in `block in feed'
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 1.8ms | Allocations: 26678)
+
+
+  [1m[36mSoundcard Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "soundcards"[0m
+Started GET "/api/v1/random" for ::1 at 2023-02-24 22:12:49 +0300
+Processing by SoundcardsController#random as HTML
+Completed 401 Unauthorized in 2ms (Allocations: 875)
+
+
+Started GET "/api/v1/users/sign_in" for ::1 at 2023-02-24 22:12:49 +0300
+Processing by Users::SessionsController#new as JSON
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 2.2ms | Allocations: 3299)
+
+
+Started GET "/api/v1/random" for ::1 at 2023-02-24 22:13:12 +0300
+Processing by SoundcardsController#random as HTML
+  [1m[36mSoundcard Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:68:in `random'
+  [1m[36mSoundcard Load (0.0ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" ORDER BY "soundcards"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/controllers/soundcards_controller.rb:69:in `random'
+Completed 200 OK in 21ms (Views: 3.0ms | ActiveRecord: 2.1ms | Allocations: 20040)
+
+
+Started GET "/api/v1/random" for ::1 at 2023-02-24 22:13:16 +0300
+Processing by SoundcardsController#random as HTML
+  [1m[36mSoundcard Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:68:in `random'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" ORDER BY "soundcards"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  ↳ app/controllers/soundcards_controller.rb:69:in `random'
+Completed 200 OK in 13ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1276)
+
+
+Started GET "/api/v1/random" for ::1 at 2023-02-24 22:13:17 +0300
+Processing by SoundcardsController#random as HTML
+  [1m[36mSoundcard Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:68:in `random'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" ORDER BY "soundcards"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/controllers/soundcards_controller.rb:69:in `random'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 1259)
+
+
+Started GET "/api/v1/random" for ::1 at 2023-02-24 22:13:17 +0300
+Processing by SoundcardsController#random as HTML
+  [1m[36mSoundcard Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:68:in `random'
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" ORDER BY "soundcards"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/controllers/soundcards_controller.rb:69:in `random'
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.4ms | Allocations: 1259)
+
+
+Started GET "/api/v1/random" for ::1 at 2023-02-24 22:15:58 +0300
+Processing by SoundcardsController#random as HTML
+  [1m[36mSoundcard Load (0.0ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:68:in `random'
+  [1m[36mStrike Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" ORDER BY "soundcards"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/controllers/soundcards_controller.rb:69:in `random'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+Completed 200 OK in 32ms (Views: 4.0ms | ActiveRecord: 4.7ms | Allocations: 45181)
+
+
+Started GET "/api/v1/random" for ::1 at 2023-02-24 22:16:06 +0300
+Processing by SoundcardsController#random as HTML
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:68:in `random'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mSoundcard Load (0.0ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" ORDER BY "soundcards"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 3]]
+  ↳ app/controllers/soundcards_controller.rb:69:in `random'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+Completed 200 OK in 14ms (Views: 5.4ms | ActiveRecord: 0.7ms | Allocations: 6026)
+
+
+Started GET "/api/v1/random" for ::1 at 2023-02-24 22:16:15 +0300
+Processing by SoundcardsController#random as HTML
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:68:in `random'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mSoundcard Load (0.0ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" ORDER BY "soundcards"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/controllers/soundcards_controller.rb:69:in `random'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+Completed 200 OK in 8ms (Views: 2.0ms | ActiveRecord: 0.7ms | Allocations: 6084)
+
+
+Started GET "/api/v1/random" for ::1 at 2023-02-24 22:16:17 +0300
+Processing by SoundcardsController#random as HTML
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:68:in `random'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" ORDER BY "soundcards"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/controllers/soundcards_controller.rb:69:in `random'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+Completed 200 OK in 19ms (Views: 3.0ms | ActiveRecord: 1.3ms | Allocations: 6084)
+
+
+Started GET "/api/v1/random" for ::1 at 2023-02-24 22:16:18 +0300
+Processing by SoundcardsController#random as HTML
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:68:in `random'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" ORDER BY "soundcards"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/controllers/soundcards_controller.rb:69:in `random'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+Completed 200 OK in 18ms (Views: 4.2ms | ActiveRecord: 1.7ms | Allocations: 6322)
+
+
+Started GET "/api/v1/random" for ::1 at 2023-02-24 22:16:20 +0300
+Processing by SoundcardsController#random as HTML
+  [1m[36mSoundcard Load (0.3ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:68:in `random'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" ORDER BY "soundcards"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/controllers/soundcards_controller.rb:69:in `random'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+Completed 200 OK in 17ms (Views: 3.5ms | ActiveRecord: 1.7ms | Allocations: 6322)
+
+
+Started GET "/api/v1/random" for ::1 at 2023-02-24 22:16:22 +0300
+Processing by SoundcardsController#random as HTML
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:68:in `random'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" ORDER BY "soundcards"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/controllers/soundcards_controller.rb:69:in `random'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+Completed 200 OK in 26ms (Views: 6.4ms | ActiveRecord: 1.9ms | Allocations: 6322)
+
+
+Started GET "/api/v1/random" for ::1 at 2023-02-24 22:16:23 +0300
+Processing by SoundcardsController#random as HTML
+  [1m[36mSoundcard Load (0.4ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:68:in `random'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" ORDER BY "soundcards"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 3]]
+  ↳ app/controllers/soundcards_controller.rb:69:in `random'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+Completed 200 OK in 21ms (Views: 4.7ms | ActiveRecord: 1.5ms | Allocations: 5983)
+
+
+Started GET "/api/v1/random" for ::1 at 2023-02-24 22:16:24 +0300
+Processing by SoundcardsController#random as HTML
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:68:in `random'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" ORDER BY "soundcards"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  ↳ app/controllers/soundcards_controller.rb:69:in `random'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+Completed 200 OK in 16ms (Views: 3.1ms | ActiveRecord: 1.4ms | Allocations: 6187)
+
+
+Started GET "/api/v1/random" for ::1 at 2023-02-24 22:16:24 +0300
+Processing by SoundcardsController#random as HTML
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:68:in `random'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mSoundcard Load (0.0ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" ORDER BY "soundcards"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 3]]
+  ↳ app/controllers/soundcards_controller.rb:69:in `random'
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+Completed 200 OK in 7ms (Views: 1.7ms | ActiveRecord: 0.6ms | Allocations: 5983)
+
+
+Started GET "/api/v1/random" for ::1 at 2023-02-24 22:16:25 +0300
+Processing by SoundcardsController#random as HTML
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:68:in `random'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in random'
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards" ORDER BY "soundcards"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/controllers/soundcards_controller.rb:69:in `random'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:72:in `random'
+Completed 200 OK in 20ms (Views: 3.1ms | ActiveRecord: 1.6ms | Allocations: 6084)
+
+
+Started GET "/api/v1/newest" for ::1 at 2023-02-24 22:18:55 +0300
+Processing by SoundcardsController#newest as HTML
+  [1m[36mSoundcard Load (0.1ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:52:in `newest'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:52:in `block in newest'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:52:in `block in newest'
+  [1m[36mStrike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:52:in `block in newest'
+  [1m[36mStrike Count (7.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:52:in `block in newest'
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 8.6ms | Allocations: 25009)
+
+
+Started GET "/api/v1/popular" for ::1 at 2023-02-24 22:19:03 +0300
+Processing by SoundcardsController#popular as HTML
+  [1m[36mSoundcard Load (0.2ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:60:in `popular'
+  [1m[36mLike Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:60:in `block in popular'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:60:in `block in popular'
+  [1m[36mLike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:60:in `block in popular'
+  [1m[36mLike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:60:in `block in popular'
+  [1m[36mLike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:60:in `block in popular'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:64:in `popular'
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:64:in `popular'
+Completed 200 OK in 44ms (Views: 6.1ms | ActiveRecord: 3.0ms | Allocations: 19318)
+
+
+Started GET "/api/v1/popular" for ::1 at 2023-02-24 22:26:20 +0300
+  
+NameError (undefined local variable or method `popshort' for #<ActionDispatch::Routing::Mapper:0x000000013d329a40 @set=#<ActionDispatch::Routing::RouteSet:0x000000014fb576b0>, @draw_paths=[#<Pathname:/Users/dorothieny/Desktop/shuum/shuum_api_2.0/config/routes>], @scope=#<ActionDispatch::Routing::Mapper::Scope:0x000000013d329950 @hash={:path_names=>{:new=>"new", :edit=>"edit"}}, @parent=#<ActionDispatch::Routing::Mapper::Scope:0x000000013e10df08 @hash=nil, @parent=nil, @scope_level=nil>, @scope_level=nil>, @concerns={}, @devise_finalized=false>):
+  
+config/routes.rb:28:in `block (2 levels) in <main>'
+config/routes.rb:9:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/api/v1/popular" for ::1 at 2023-02-24 22:26:35 +0300
+Processing by SoundcardsController#popular as HTML
+  [1m[36mSoundcard Load (0.8ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:60:in `popular'
+  [1m[36mLike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:60:in `block in popular'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:60:in `block in popular'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:60:in `block in popular'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:60:in `block in popular'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:60:in `block in popular'
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:64:in `popular'
+  [1m[36mTag Load (1.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:64:in `popular'
+Completed 200 OK in 27ms (Views: 3.9ms | ActiveRecord: 3.0ms | Allocations: 39632)
+
+
+Started GET "/api/v1/popshort" for ::1 at 2023-02-24 22:26:40 +0300
+Processing by SoundcardsController#popshort as HTML
+Completed 401 Unauthorized in 36ms (ActiveRecord: 0.0ms | Allocations: 818)
+
+
+Started GET "/api/v1/users/sign_in" for ::1 at 2023-02-24 22:26:40 +0300
+Processing by Users::SessionsController#new as JSON
+Completed 200 OK in 14ms (Views: 0.1ms | ActiveRecord: 4.0ms | Allocations: 3629)
+
+
+Started GET "/api/v1/users/sign_in" for ::1 at 2023-02-24 22:27:00 +0300
+Processing by Users::SessionsController#new as JSON
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 3859)
+
+
+Started GET "/api/v1/popshort" for ::1 at 2023-02-24 22:27:05 +0300
+Processing by SoundcardsController#popshort as HTML
+  [1m[36mSoundcard Load (0.7ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:76:in `popshort'
+  [1m[36mLike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:76:in `block in popshort'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:76:in `block in popshort'
+  [1m[36mLike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:76:in `block in popshort'
+  [1m[36mLike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:76:in `block in popshort'
+  [1m[36mLike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:76:in `block in popshort'
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:80:in `popshort'
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggables" ON "tags"."id" = "taggables"."tag_id" WHERE "taggables"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:80:in `popshort'
+Completed 200 OK in 157ms (Views: 24.7ms | ActiveRecord: 2.6ms | Allocations: 40866)
+
+
+Started GET "/api/v1/newshort" for ::1 at 2023-02-24 22:27:19 +0300
+Processing by SoundcardsController#newshort as HTML
+  [1m[36mSoundcard Load (0.4ms)[0m  [1m[34mSELECT "soundcards".* FROM "soundcards"[0m
+  ↳ app/controllers/soundcards_controller.rb:68:in `newshort'
+  [1m[36mStrike Count (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 1]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in newshort'
+  [1m[36mStrike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 2]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in newshort'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 3]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in newshort'
+  [1m[36mStrike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strikes" WHERE "strikes"."soundcard_id" = ?[0m  [["soundcard_id", 4]]
+  ↳ app/controllers/soundcards_controller.rb:68:in `block in newshort'
+Completed 200 OK in 30ms (Views: 0.3ms | ActiveRecord: 2.6ms | Allocations: 3171)
+
+

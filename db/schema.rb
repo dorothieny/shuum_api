@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_13_114729) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_24_141557) do
   create_table "follows", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followee_id"
@@ -43,6 +43,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_114729) do
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
     t.index ["user_id"], name: "index_soundcards_on_user_id"
+  end
+
+  create_table "strikes", force: :cascade do |t|
+    t.integer "soundcard_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["soundcard_id"], name: "index_strikes_on_soundcard_id"
+    t.index ["user_id"], name: "index_strikes_on_user_id"
   end
 
   create_table "taggables", force: :cascade do |t|
@@ -78,6 +87,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_114729) do
   add_foreign_key "likes", "soundcards"
   add_foreign_key "likes", "users"
   add_foreign_key "soundcards", "users"
+  add_foreign_key "strikes", "soundcards"
+  add_foreign_key "strikes", "users"
   add_foreign_key "taggables", "soundcards"
   add_foreign_key "taggables", "tags"
 end

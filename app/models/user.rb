@@ -7,6 +7,8 @@
            has_many :likes, dependent: :destroy
            has_many :liked_soundcards, :through => :likes, :source => :soundcard
            
+           has_many :strikes, dependent: :destroy
+
            mount_uploader :avatar, AvatarUploader
            has_many :followed_users, foreign_key: :follower_id, class_name: 'Follow'
            has_many :followees, through: :followed_users

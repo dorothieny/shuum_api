@@ -18,9 +18,11 @@ Rails.application.routes.draw do
                 put 'users/:id/edit', to: "users#update_info"
               resources :soundcards do 
                 resources :likes
+                resources :strikes
               end
               get 'newest', :to => "soundcards#newest", :as => :newest
               get 'popular', :to => "soundcards#popular", :as => :popular
+              get 'striked', :to => "soundcards#striked", :as => :striked
               resources :tags
             end
 

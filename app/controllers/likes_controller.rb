@@ -10,7 +10,7 @@ class LikesController < ApplicationController
     
    def create
     if already_liked?
-        @like.destroy
+        # @like.destroy
         render json: {message: "You can't like more than once"} 
       else
         @soundcard.likes.create(user_id: current_user.id)

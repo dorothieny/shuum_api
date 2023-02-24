@@ -1,10 +1,10 @@
 class SoundcardsController < ApplicationController
   before_action :set_soundcard, only: %i[ show update destroy ]
-  before_action :authenticate_user!, except: [:index, :show, :newest, :popular]
+  before_action :authenticate_user!, except: [:index, :show, :newest, :popular, :striked]
 
   # GET /soundcards
   def index
-  @soundcards = Soundcard.all
+  @soundcards = Soundcard.all.select {|soundcard| soundcard.strikes.count <= 2}
   filtering_params(params).each do |key, value|
     @soundcards = @soundcards.public_send("filter_by_#{key}", value) if value.present?
   end
@@ -19,7 +19,7 @@ class SoundcardsController < ApplicationController
   # GET /soundcards/1
   def show
     @author = User.where(id: @soundcard.user_id)
-    render json: {likes: @soundcard.likes, tags: @soundcard.tags, soundcard: @soundcard, author: @author.first.name}, status: :ok
+    render json: {likes: @soundcard.likes, tags: @soundcard.tags, soundcard: @soundcard, author: @author.first.name, strikes: @soundcard.strikes}, status: :ok
   end
 
   # POST /soundcards
@@ -49,18 +49,34 @@ class SoundcardsController < ApplicationController
   end
 
   def newest
-    @current_week = Soundcard.where("created_at >= ?", Date.today - 7).map do |soundcard|
+    @middleres = Soundcard.all.select{|soundcard| soundcard.strikes.count <= 2 && soundcard.created_at >= Date.today - 7}
+    @current_week = @middleres.map do |soundcard|
       soundcard.as_json.merge({:likes => soundcard.likes, :tags => soundcard.tags})
   end
     render json: @current_week
   end
 
   def popular
-    @popular = Soundcard.all.select {|soundcard| soundcard.likes.count >= 1}
+    @popular = Soundcard.all.select {|soundcard| soundcard.likes.count >= 1 && soundcard.strikes.count <= 2 }
     @popular = @popular.map do |soundcard|
       soundcard.as_json.merge({:likes => soundcard.likes, :tags => soundcard.tags})
   end
     render json: @popular
+  end
+
+  def striked
+    @striked = Soundcard.all.select {|soundcard| soundcard.strikes.count >= 1}
+    @striked = @striked.map do |soundcard|
+      soundcard.as_json.merge({:strikes => soundcard.strikes, :tags => soundcard.tags})
+  end
+    render json: @striked
+
+    # if current_user.isadmin?
+    #   render json: @striked
+    # else
+    #   render json: {message: "You can't get strikes as you are not an admin"} 
+    # end
+
   end
 
   private

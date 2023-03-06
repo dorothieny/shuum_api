@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show, :following, :followed, :liked, :created, :feed]
+  before_action :authenticate_user!, except: [:index, :show, :following, :followed, :liked, :created, :feed, :current]
 
   def index
     @users = User.all
@@ -111,6 +111,15 @@ class UsersController < ApplicationController
       end
       render json: @following
     end
+  end
+
+  def current
+    if current_user
+      render json: current_user
+    else
+      render json: {message: "You are not logged"} 
+    end
+
   end
 
   def update_info

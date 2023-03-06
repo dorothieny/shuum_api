@@ -15,6 +15,7 @@ Rails.application.routes.draw do
                 get 'users/:id/liked', :to => "users#liked", :as => :liked
                 get 'users/:id/created', :to => "users#created", :as => :created
                 get 'users/:id/feed', :to => "users#feed", :as => :feed
+                get 'user', :to => "users#current", :as => :current
                 put 'users/:id/edit', to: "users#update_info"
               resources :soundcards do 
                 resources :likes

@@ -15,7 +15,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
-    render json: @user
+    @soundcards = Soundcard.where(user_id: @user.id)
+
+    render json: {user: @user, count: @soundcards.count}
   end
 
   def destroy

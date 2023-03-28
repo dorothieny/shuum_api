@@ -234,7 +234,7 @@ DEPENDENCIES
   dotenv-rails
   kaminari
   puma (~> 5.0)
-  rack-cors
+  rack-cors (~> 1.1, >= 1.1.1)
   rails (~> 7.0.4)
   sqlite3 (~> 1.4)
   tzinfo-data

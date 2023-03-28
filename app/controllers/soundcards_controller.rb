@@ -133,7 +133,7 @@ class SoundcardsController < ApplicationController
     end
 
     def filtering_params(params)
-      params.slice(:starts_with, :location, :multiple)
+      params.slice(:starts_with, :location, :multiple, :user)
     end
 
 end

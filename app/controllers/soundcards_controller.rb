@@ -9,13 +9,14 @@ class SoundcardsController < ApplicationController
     @soundcards = @soundcards.public_send("filter_by_#{key}", value) if value.present?
   end
   @soundcards = @soundcards.select {|soundcard| soundcard.strikes.count <= 2}
+  # @sou = @soundcards.select  {|soundcard| soundcard}
   @soundcardstest = Kaminari.paginate_array(@soundcards).page(params[:page]).per(15)
   
-   @soundcards = @soundcardstest.map do |soundcard|
+   @soundcardss = @soundcardstest.map do |soundcard|
       soundcard.as_json.merge({:likes => soundcard.likes, :tags => soundcard.tags})
   end
 
-    render json: @soundcards
+    render json: @soundcardss
   end
 
   # GET /soundcards/1

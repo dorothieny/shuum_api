@@ -49,7 +49,7 @@ class UsersController < ApplicationController
        
       @liked = @liked.select {|soundcard| soundcard.strikes.count <= 2}
       @liked = @liked.map do |soundcard|
-        soundcard.as_json.merge({:tags => soundcard.tags})
+        soundcard.as_json.merge({:likes => soundcard.likes, :tags => soundcard.tags})
     end
     @likedfin = Kaminari.paginate_array(@liked).page(params[:page]).per(15)
       render json: @likedfin
@@ -117,7 +117,9 @@ class UsersController < ApplicationController
 
   def current
     if current_user
-      render json: current_user
+      @soundcards = Soundcard.where(user_id: current_user.id)
+      
+      render json: {user: current_user, count: @soundcards.count}
     else
       render json: {message: "You are not logged"} 
     end

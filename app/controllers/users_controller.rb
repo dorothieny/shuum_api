@@ -45,9 +45,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user
       @liked = @user.liked_soundcards
-      @liked = @liked.where("location like ? OR name like ?", "%#{params[:multiple]}%", "%#{params[:multiple]}%") if params[:multiple].present?
+      @liked = @liked.where("lower(location) like ? OR lower(name) like ?", "%#{params[:multiple]}%", "%#{params[:multiple]}%") if params[:multiple].present?
        
-      @liked = @liked.select {|soundcard| soundcard.strikes.count <= 2}
+      @liked = @liked.order(created_at: :desc).select {|soundcard| soundcard.strikes.count <= 2}
       @liked = @liked.map do |soundcard|
         soundcard.as_json.merge({:likes => soundcard.likes, :tags => soundcard.tags})
     end
@@ -61,9 +61,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user
       @soundcards = Soundcard.where(user_id: @user.id)
-      @soundcards = @soundcards.where("location like ? OR name like ?", "%#{params[:multiple]}%", "%#{params[:multiple]}%") if params[:multiple].present?
+      @soundcards = @soundcards.where("lower(location) like ? OR lower(name) like ?", "%#{params[:multiple]}%", "%#{params[:multiple]}%") if params[:multiple].present?
        
-      @soundcards = @soundcards.select {|soundcard| soundcard.strikes.count <= 2}
+      @soundcards = @soundcards.order(created_at: :desc).select {|soundcard| soundcard.strikes.count <= 2}
 
       @soundcards = @soundcards.map do |soundcard|
         soundcard.as_json.merge({:likes => soundcard.likes, :tags => soundcard.tags})
@@ -103,7 +103,7 @@ class UsersController < ApplicationController
 
       @following = @user.followees.all.map do |followee| 
 
-        @soundcards = Soundcard.all.select {|soundcard| soundcard.user_id == followee.id && soundcard.created_at >= Date.today - 7 && soundcard.strikes.count <= 2}
+        @soundcards = Soundcard.all.order(created_at: :desc).select {|soundcard| soundcard.user_id == followee.id && soundcard.created_at >= Date.today - 7 && soundcard.strikes.count <= 2}
         @soundcards = @soundcards.map do |soundcard|
           soundcard.as_json.merge({:likes => soundcard.likes, :tags => soundcard.tags})
       end

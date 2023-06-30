@@ -5,6 +5,7 @@ class SoundcardsController < ApplicationController
   # GET /soundcards
   def index
   @soundcards = Soundcard.all
+  @soundcards = @soundcards.order(created_at: :desc)
   filtering_params(params).each do |key, value|
     @soundcards = @soundcards.public_send("filter_by_#{key}", value) if value.present?
   end
@@ -61,7 +62,7 @@ class SoundcardsController < ApplicationController
   end
 
   def popular
-    @popular = Soundcard.all.select {|soundcard| soundcard.likes.count >= 1 && soundcard.strikes.count <= 2 }
+    @popular = Soundcard.all.order(created_at: :desc).select {|soundcard| soundcard.likes.count >= 1 && soundcard.strikes.count <= 2 }
     @current = Kaminari.paginate_array(@popular).page(params[:page]).per(15)
     @popular = @current.map do |soundcard|
       soundcard.as_json.merge({:likes => soundcard.likes, :tags => soundcard.tags})
@@ -70,7 +71,7 @@ class SoundcardsController < ApplicationController
   end
 
   def newshort
-    @middleres = Soundcard.all.select{|soundcard| soundcard.strikes.count <= 2 && soundcard.created_at >= Date.today - 7}
+    @middleres = Soundcard.all.order(created_at: :desc).select{|soundcard| soundcard.strikes.count <= 2 && soundcard.created_at >= Date.today - 7}
     @current_week = @middleres.map do |soundcard|
       soundcard.as_json.merge({:likes => soundcard.likes, :tags => soundcard.tags})
   end
@@ -78,7 +79,7 @@ class SoundcardsController < ApplicationController
   end
 
   def popshort
-    @popular = Soundcard.all.select {|soundcard| soundcard.likes.count >= 1 && soundcard.strikes.count <= 2 }
+    @popular = Soundcard.all.order(created_at: :desc).select {|soundcard| soundcard.likes.count >= 1 && soundcard.strikes.count <= 2 }
     @popular = @popular.map do |soundcard|
       soundcard.as_json.merge({:likes => soundcard.likes, :tags => soundcard.tags})
   end
@@ -97,7 +98,7 @@ class SoundcardsController < ApplicationController
 
 
   def striked
-    @striked = Soundcard.all.select {|soundcard| soundcard.strikes.count >= 1}
+    @striked = Soundcard.all.order(created_at: :desc).select {|soundcard| soundcard.strikes.count >= 1}
     @striked = @striked.map do |soundcard|
       soundcard.as_json.merge({:strikes => soundcard.strikes, :tags => soundcard.tags})
   end
